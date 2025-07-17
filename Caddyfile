@@ -10,18 +10,6 @@ assess.poc.localhost {
     
 }
 
-grade.poc.localhost {
-
-    root * /srv/www/grade
-    file_server
-    tls internal
-
-    php_fastcgi poc-grade:9000 {
-        root /app
-    }
-    
-}
-
 moodle.poc.localhost poc-proxy {
 
     root * /srv/www/moodle
