@@ -26,7 +26,9 @@ class LTIController extends Controller
             exit;
         }
 
-        return view('example');
+        return view('example', [
+            'user_id' => $request->user_id,
+        ]);
 
 //        $service_url = $request->lis_outcome_service_url;
 //        $sourcedid = $request->lis_result_sourcedid;
@@ -38,6 +40,13 @@ class LTIController extends Controller
 //
 //        dd(static::sendGrade($service_url, $sourcedid, 0.76));
 
+    }
+
+    public function submit(Request $request) {
+
+        // Queue the process to send the data to the grading service.
+
+        dd($request->all());
     }
 
     public static function validate_oauth($params, $secret, $launch_url) {

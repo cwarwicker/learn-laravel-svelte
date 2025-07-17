@@ -7,4 +7,4 @@ Route::get('/', function () {
 });
 
 Route::any('/lti', [\App\Http\Controllers\LTIController::class, 'index'])->name('lti');
-
+Route::post('/submit', [\App\Http\Controllers\LTIController::class, 'submit'])->name('submit');
